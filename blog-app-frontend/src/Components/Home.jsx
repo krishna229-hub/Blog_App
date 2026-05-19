@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useAuth } from "../store/authStore";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import Card from "./Card";
 import { articleGrid, loadingClass, errorClass, primaryBtn, secondaryBtn } from "../styles/common";
 
@@ -20,7 +21,7 @@ const Home = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          "http://localhost:4000/common-api/articles"
+          `${API_URL}/common-api/articles`
         );
         setArticles(res.data.payload);
       } catch (err) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import { useNavigate, Link } from "react-router";
 import { useAuth } from "../store/authStore";
 import toast from "react-hot-toast";
@@ -40,8 +41,8 @@ const Register = () => {
     try {
       let apiUrl =
         role === "AUTHOR"
-          ? "http://localhost:4000/author-api/users"
-          : "http://localhost:4000/user-api/users";
+          ? `${API_URL}/author-api/users`
+          : `${API_URL}/user-api/users`;
 
       let resObj = await axios.post(apiUrl, formData);
 

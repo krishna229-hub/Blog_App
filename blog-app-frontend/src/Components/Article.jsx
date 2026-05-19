@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../config.js";
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router";
 import { useAuth } from "../store/authStore";
@@ -37,7 +38,7 @@ const Article = () => {
     const fetchArticle = async () => {
       try {
         const resObj = await axios.get(
-          `http://localhost:4000/common-api/articles/${id}`
+          `${API_URL}/common-api/articles/${id}`
         );
         setArticle(resObj.data.payload);
       } catch (err) {
@@ -57,7 +58,7 @@ const Article = () => {
     setSubmitting(true);
     try {
       const res = await axios.put(
-        "http://localhost:4000/user-api/articles",
+        `${API_URL}/user-api/articles`,
         { articleId: id, comment: commentText },
         { withCredentials: true }
       );
@@ -75,7 +76,7 @@ const Article = () => {
   const handleDeleteComment = async (commentId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/common-api/articles/${id}/comments/${commentId}`,
+        `${API_URL}/common-api/articles/${id}/comments/${commentId}`,
         { withCredentials: true }
       );
       setArticle(res.data.payload);

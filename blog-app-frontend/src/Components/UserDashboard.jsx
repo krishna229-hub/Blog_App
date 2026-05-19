@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../store/authStore";
 import { Link, useNavigate } from "react-router";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import toast from "react-hot-toast";
 import { loadingClass, errorClass, primaryBtn, secondaryBtn } from "../styles/common";
 
@@ -24,7 +25,7 @@ const UserDashboard = () => {
     const fetchArticles = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:4000/user-api/articles",
+          `${API_URL}/user-api/articles`,
           { withCredentials: true }
         );
         setArticles(res.data.payload);

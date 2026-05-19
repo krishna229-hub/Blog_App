@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { useAuth } from '../store/authStore';
 import axios from 'axios';
+import { API_URL } from '../config.js';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
 import {
@@ -22,7 +23,7 @@ const AddArticle = () => {
     const submitHandler = async (articleObj) => {
         setLoading(true);
         try {
-            await axios.post("http://localhost:4000/author-api/articles",
+            await axios.post(`${API_URL}/author-api/articles`,
                 articleObj,
                 { withCredentials: true }
             );

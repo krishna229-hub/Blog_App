@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../store/authStore";
 import { Link, useNavigate } from "react-router";
 import axios from "axios";
+import { API_URL } from "../config.js";
 import toast from "react-hot-toast";
 import {
   loadingClass,
@@ -31,7 +32,7 @@ const AuthorProfile = () => {
     const fetchArticles = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:4000/author-api/articles",
+          `${API_URL}/author-api/articles`,
           { withCredentials: true }
         );
         setArticles(res.data.payload);
@@ -50,7 +51,7 @@ const AuthorProfile = () => {
   const toggleArticleStatus = async (articleId) => {
     try {
       const res = await axios.patch(
-        `http://localhost:4000/author-api/article/${articleId}/status`,
+        `${API_URL}/author-api/article/${articleId}/status`,
         {},
         { withCredentials: true }
       );
