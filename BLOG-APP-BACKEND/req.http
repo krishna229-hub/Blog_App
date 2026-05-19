@@ -1,0 +1,143 @@
+### User Register
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName": "sai",
+    "lastName": "teja",
+    "email": "something@example.com",
+    "password": "Password123",
+    "profileImageUrl": "https://example.com/profile-picture.jpg"
+}
+
+### User Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "anurag.sharma@example.com",
+    "password": "newpassword123"
+}
+
+
+### REading all articles from user side (OLD Way)
+# GET http://localhost:4000/user-api/user/698965e1075606f41d6fcf75/articles
+
+### Reading all articles from user side (NEW Way)
+GET http://localhost:4000/user-api/articles
+
+### Commenting on an article (OLD Way)
+# PUT http://localhost:4000/user-api/user/698965e1075606f41d6fcf75/article/69898278c8c9f32745bfada5
+# Content-Type: application/json
+
+# {
+#     "comment": "This is a comment on the article."
+# }
+
+### Commenting on an article (NEW Way)
+PUT http://localhost:4000/user-api/articles
+Content-Type: application/json
+
+{
+    "user": "698965e1075606f41d6fcf75",
+    "articleId": "69897e0dd3b67969646b04f3",
+    "comment": "This is a comment on the article."
+}
+
+### Reading one Article by id
+GET http://localhost:4000/user-api/article/69897e0dd3b67969646b04f3
+
+
+### Author Register
+POST http://localhost:4000/author-api/users
+Content-Type: application/json
+
+{
+    "firstName": "test2",
+    "lastName": "author",
+    "email": "test2.author@example.com",
+    "password": "Password123",
+    "profileImageUrl": "https://example.com/profile-picture.jpg"
+}
+
+### Author Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "testauthor@gmail.com",
+    "password": "Password123"
+}
+
+### Create article
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "title": "My third Article",
+    "category": "programming",
+    "content": "This is the content of my second article."
+}
+
+
+
+### Read all articles by an author (OLD Way)
+# GET http://localhost:4000/author-api/articles/69896622075606f41d6fcf79
+
+### Read all articles by an author (NEW Way)
+GET http://localhost:4000/author-api/articles
+
+### Update an article (AUTHOR)
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId" : "69aee72dc8301f948b77e62a",
+    "title": "My third Article2",
+    "category": "programming2",
+    "content": "This is the content of my third article."
+}
+
+### Soft delete an article (AUTHOR) --> OLD Way
+# PATCH http://localhost:4000/author-api/author/69896622075606f41d6fcf79/article/69897e0dd3b67969646b04f3
+
+### Soft delete an article (AUTHOR) --> NEW Way
+PATCH http://localhost:4000/author-api/article/69aee72dc8301f948b77e62a/status
+
+
+
+### Admin Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "admin@work.com",
+    "password": "adminworks"
+}
+
+### Admin reading all articles
+GET http://localhost:4000/admin-api/articles
+
+### block the user (ADMIN)
+PUT http://localhost:4000/admin-api/block/698965e1075606f41d6fcf75
+
+### unblock the user (ADMIN)
+PUT http://localhost:4000/admin-api/unblock/698965e1075606f41d6fcf75
+
+
+### change password
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "email": "anurag.sharma@example.com",
+    "oldPassword": "password123",
+    "newPassword": "newpassword123"
+}
+
+
+### LOGOUT
+GET http://localhost:4000/common-api/logout
+
+### test request
+GET http://localhost:4000/test
