@@ -39,7 +39,10 @@ app.use("/common-api",commonRoute);
 app.use('/admin-api',adminRoute);
 app.use('/author-api',authorRoute);
 
-
+// default root route
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "Welcome to the Blog App Backend API!" });
+});
 
 // dealing with invalid path
 app.use((req,res,next)=>{
