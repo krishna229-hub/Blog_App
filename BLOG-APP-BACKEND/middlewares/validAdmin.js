@@ -1,4 +1,4 @@
-import { UserModel } from "../Models/UserModel.js"
+import { UserModel } from "../models/UserModel.js"
 
 export const validateAdmin = async(req,res,next) => {
     let aid = req.params?.aid || req.body?.aid;

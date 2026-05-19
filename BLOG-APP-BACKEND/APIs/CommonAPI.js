@@ -1,8 +1,8 @@
 // mini express app
 import express from "express";
 import { login } from "../services/AuthServices.js";
-import { UserModel } from "../Models/UserModel.js";
-import { ArticleModel } from "../Models/ArticleModel.js";
+import { UserModel } from "../models/UserModel.js";
+import { ArticleModel } from "../models/ArticleModel.js";
 import { compare, hash } from "bcryptjs";
 import {verifyToken} from "../middlewares/verifyToken.js"
 

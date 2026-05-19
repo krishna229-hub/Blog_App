@@ -3,10 +3,10 @@ import express from "express";
 import { register } from "../services/AuthServices.js";
 import { verifyToken } from "../middlewares/verifyToken.js";
 import { validUSer } from "../middlewares/validUser.js";
-import { ArticleModel } from "../Models/ArticleModel.js";
-import { upload } from "../Config/multer.js";
-import cloudinary from "../Config/cloudinary.js";
-import { uploadToCloudinary } from "../Config/cloudinaryUpload.js";
+import { ArticleModel } from "../models/ArticleModel.js";
+import { upload } from "../config/multer.js";
+import cloudinary from "../config/cloudinary.js";
+import { uploadToCloudinary } from "../config/cloudinaryUpload.js";
 
 export const userRoute = express.Router();
 
