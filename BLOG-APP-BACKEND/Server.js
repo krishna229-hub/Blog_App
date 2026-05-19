@@ -26,7 +26,7 @@ const connectDB = async() => {
 connectDB();
 // cors
 app.use(cors({
-    origin:["https://blog-app-f6p4.onrender.com","https://blog-app-beige-ten.vercel.app"],
+    origin:["http://localhost:5174","https://blog-app-beige-ten.vercel.app"],
     credentials:true
 }));
 // body parser
