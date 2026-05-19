@@ -13,13 +13,6 @@ const AuthorDashboard = () => {
   const [error, setError] = useState(null);
 
   const currentUser = useAuth((state) => state.currentUser);
-  const logout = useAuth((state) => state.logout);
-
-  const onLogout = async () => {
-    await logout();
-    toast.success("Logged out");
-    navigate("/login");
-  };
 
   useEffect(() => {
     const fetchArticles = async () => {

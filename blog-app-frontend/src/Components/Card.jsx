@@ -1,5 +1,5 @@
 import React from 'react'
-import { tagClass, articleTitle, articleExcerpt, articleMeta, ghostBtn } from '../styles/common'
+import { tagClass, articleTitle, articleExcerpt, articleMeta } from '../styles/common'
 import { useNavigate } from 'react-router'
 
 const Card = ({articleObj}) => {

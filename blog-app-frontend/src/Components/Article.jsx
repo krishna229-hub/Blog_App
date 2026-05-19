@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_URL } from "../config.js";
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router";
+import { useParams } from "react-router";
 import { useAuth } from "../store/authStore";
 import toast from "react-hot-toast";
 import {
@@ -16,13 +16,11 @@ import {
   articleContent,
   articleFooter,
   primaryBtn,
-  secondaryBtn,
   inputClass,
 } from "../styles/common";
 
 const Article = () => {
   const { id } = useParams();
-  const locationObj = useLocation();
 
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);

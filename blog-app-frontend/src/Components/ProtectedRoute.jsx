@@ -3,7 +3,7 @@ import { Navigate } from "react-router";
 
 function ProtectedRoute({ children, allowedRoles }) {
   //get user login status from store
-  const { loading, currentUser, isAuthenticated, logout } = useAuth();
+  const { loading, currentUser, isAuthenticated } = useAuth();
   //loading state
   if (loading) {
     return <p>Loading...</p>;

@@ -15,7 +15,7 @@ const RootLayout = () => {
 
   useEffect(() => {
     checkAuth();
-  },[])
+  },[checkAuth])
 
   // Scroll to top on every route change
   useEffect(() => {

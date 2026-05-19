@@ -1,6 +1,6 @@
-import { useState } from "react";
+
 import { createBrowserRouter, RouterProvider } from "react-router";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 import RootLayout from "./Components/RootLayout";
 import Home from "./Components/Home";
@@ -17,13 +17,12 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import Unauthorized from "./Components/Unauthorized";
 import ErrorComponent from "./Components/ErrorComponent";
 
-function App() {
-  const [count, setCount] = useState(0);
+function App() {;
   const routerObj = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
-      errorElement:<ErrorComponent />,
+      errorElement: <ErrorComponent />,
       children: [
         {
           path: "/",

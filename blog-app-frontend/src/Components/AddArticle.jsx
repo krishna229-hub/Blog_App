@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { useAuth } from '../store/authStore';
+
 import axios from 'axios';
 import { API_URL } from '../config.js';
 import toast from 'react-hot-toast';
@@ -11,13 +11,11 @@ import {
   labelClass,
   inputClass,
   submitBtn,
-  errorClass,
 } from '../styles/common';
 
 const AddArticle = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const currentUser = useAuth(state => state.currentUser)
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const submitHandler = async (articleObj) => {

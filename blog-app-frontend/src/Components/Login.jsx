@@ -5,8 +5,6 @@ import { useNavigate, Link } from 'react-router';
 import {
   errorClass,
   loadingClass,
-  formCard,
-  formTitle,
   formGroup,
   labelClass,
   inputClass,
@@ -41,7 +39,7 @@ const Login = () => {
                 navigate("/author-profile")
             }
         }
-    }, [isAuthenticated, currentUser]);
+    }, [isAuthenticated, currentUser, navigate]);
 
     if (loading) {
         return <p className={loadingClass}>Signing in...</p>

@@ -18,15 +18,18 @@ const port = process.env.PORT;
 const connectDB = async() => {
     await connect(process.env.MONGO_URL);
     console.log("Connected to MongoDB Successfully");
-    app.listen(port, ()=>{
-        console.log(`server running on port ${port}`);
-    })
 }
 
 connectDB();
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`server running on port ${port}`);
+    });
+}
 // cors
 app.use(cors({
-    origin:["http://localhost:5174","https://blog-app-beige-ten.vercel.app"],
+    origin:["http://localhost:5173","https://blog-app-beige-ten.vercel.app"],
     credentials:true
 }));
 // body parser
@@ -150,3 +153,5 @@ app.use((err, req, res, next) => {
     error: "Server side error",
   });
 });
+
+export default app;

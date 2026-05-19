@@ -8,7 +8,6 @@ import Card from './Card'
 import {
   loadingClass,
   errorClass,
-  primaryBtn,
   secondaryBtn,
   articleGrid,
 } from '../styles/common'

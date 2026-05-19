@@ -9,7 +9,6 @@ import {
   errorClass,
   primaryBtn,
   secondaryBtn,
-  ghostBtn,
 } from "../styles/common";
 
 const AuthorProfile = () => {
@@ -63,7 +62,7 @@ const AuthorProfile = () => {
         )
       );
       toast.success(res.data.message);
-    } catch (err) {
+    } catch {
       toast.error("Failed to update article status");
     }
   };

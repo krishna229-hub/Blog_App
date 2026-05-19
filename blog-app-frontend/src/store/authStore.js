@@ -1,5 +1,4 @@
 import {create} from "zustand"
-import {persist} from "zustand/middleware"
 import axios from "axios"
 import { API_URL } from "../config.js"
 
@@ -9,7 +8,7 @@ export const useAuth = create((set) => ({
     isAuthenticated:false,
     error:null,
     login: async(userCredWithRole) => {
-        const {role,...userCredObj} = userCredWithRole;
+        const {...userCredObj} = userCredWithRole;
         try{   
 
             // set loading to true
@@ -41,7 +40,7 @@ export const useAuth = create((set) => ({
         try {
             set({loading:true,error:null})
             // make api call
-            let res = await axios.get(`${API_URL}/common-api/logout`,{withCredentials:true})
+            await axios.get(`${API_URL}/common-api/logout`,{withCredentials:true})
             // update the state
             set({currentUser:null,loading:false,isAuthenticated:false})
         } catch (err) {
@@ -60,7 +59,7 @@ export const useAuth = create((set) => ({
             let res = await axios.get(`${API_URL}/common-api/check-auth`,{withCredentials:true});
             // console.log(res);
             set({currentUser:res.data.payload,loading:false,isAuthenticated:true})
-        } catch (err) {
+        } catch {
             set({
                 loading:false,
                 error:null,
