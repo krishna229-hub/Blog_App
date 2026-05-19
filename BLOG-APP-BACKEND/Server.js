@@ -26,7 +26,7 @@ const connectDB = async() => {
 connectDB();
 // cors
 app.use(cors({
-    origin:["http://localhost:5173"],
+    origin:["http://localhost:5173", "https://blog-app-f6p4.onrender.com"],
     credentials:true
 }));
 // body parser
