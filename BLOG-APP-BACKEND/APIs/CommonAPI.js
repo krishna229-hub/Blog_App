@@ -32,8 +32,8 @@ commonRoute.post("/login",async(req,res,next)=>{
         // save the cookie as http only cookie
         res.cookie("token",token,{
             httpOnly:true,
-            sameSite:"lax",
-            secure:false
+            sameSite:"none",
+            secure:true
         });
         // sending the response now
         res.status(200).json({
@@ -50,8 +50,8 @@ commonRoute.post("/login",async(req,res,next)=>{
 commonRoute.get("/logout",async(req,res)=>{
     // clear the cookies
     res.clearCookie("token",{
-        secure:false,
-        sameSite:"lax",
+        secure:true,
+        sameSite:"none",
         httpOnly:true
     })
     res.status(200).json({
