@@ -1,10 +1,10 @@
 import express from "express";
-import { ArticleModel } from "../models/ArticleModel.js";
+import { ArticleModel } from "../Models/ArticleModel.js";
 import { verifyToken } from "../middlewares/verifyToken.js";
 import { validAuthor } from "../middlewares/validAuthor.js";
 import { register } from "../services/AuthServices.js";
-import { upload } from "../config/multer.js";
-import { uploadToCloudinary } from "../config/cloudinaryUpload.js";
+import { upload } from "../Config/multer.js";
+import { uploadToCloudinary } from "../Config/cloudinaryUpload.js";
 
 export const authorRoute = express.Router();
 // register author
