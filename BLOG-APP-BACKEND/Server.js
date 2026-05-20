@@ -13,7 +13,7 @@ import { authorRoute } from "./APIs/AuthorAPI.js";
 config();
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 const connectDB = async() => {
     await connect(process.env.MONGO_URL);
@@ -22,9 +22,9 @@ const connectDB = async() => {
 
 connectDB();
 
-if (process.env.NODE_ENV !== 'production') {
+if (!process.env.VERCEL) {
     app.listen(port, () => {
-        console.log(`server running on port ${port}`);
+        console.log(`Server running on port ${port}`);
     });
 }
 // cors
