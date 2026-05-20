@@ -1,8 +1,8 @@
-# 📝 MERN Stack Blog Application
+#  MERN Stack Blog Application
 
 A complete, professional MERN stack blog application featuring dynamic role-based access control, article publication workflows, profile management, and a modern responsive user interface.
 
-## 🚀 Project Overview
+##  Project Overview
 
 This project is a multi-role blogging platform where:
 *   **Readers (Users)** can browse published articles, search/filter, read content, leave comments, and like posts.
@@ -13,7 +13,7 @@ The codebase is split into a **Frontend React client** (Vite + Tailwind CSS v4) 
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technologies Used |
 | :--- | :--- |
@@ -23,7 +23,7 @@ The codebase is split into a **Frontend React client** (Vite + Tailwind CSS v4) 
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```text
 Capstone Project/
@@ -47,7 +47,7 @@ Capstone Project/
 
 ---
 
-## 🔑 Key Features
+##  Key Features
 
 1.  **Role-Based Access Control (RBAC):** Users, Authors, and Admins are served custom dashboards and have secure routes validated on both the frontend and backend.
 2.  **JWT Authentication via HTTP-Only Cookies:** Secure login flow storing sessions in secure, cross-site cookies, preventing XSS token theft.
@@ -57,7 +57,7 @@ Capstone Project/
 
 ---
 
-## 💻 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 Ensure you have [Node.js](https://nodejs.org/) (v18+) and [MongoDB](https://www.mongodb.com/) installed or access to a MongoDB Atlas cluster.
@@ -107,7 +107,7 @@ Ensure you have [Node.js](https://nodejs.org/) (v18+) and [MongoDB](https://www.
 
 ---
 
-## 🌐 Deployment Configuration
+##  Deployment Configuration
 
 *   **Backend Deployment**: Ready for **Render** (via standard node listener) and **Vercel** (configured as serverless function). The server dynamically checks `process.env.VERCEL` to prevent binding conflicts on serverless runtimes.
 *   **Frontend Deployment**: Configured for **Vercel** with a `vercel.json` rewrite configuration to support React Router single-page application routing without 404 errors on refreshes.
