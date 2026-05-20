@@ -4,7 +4,7 @@ This directory houses the frontend user interface for the MERN Blog Application.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 blog-app-frontend/
@@ -38,7 +38,7 @@ blog-app-frontend/
 
 ---
 
-## ⚙️ Key Technical Features
+##  Key Technical Features
 
 ### 1. Global State Management (Zustand)
 Session states (`currentUser`, `loading`, `isAuthenticated`) are stored globally using Zustand in `src/store/authStore.js`. It exposes simple async functions like `login`, `logout`, and `checkAuth` that interact with backend endpoints using Axios (with cookies enabled via `{ withCredentials: true }`).
@@ -54,7 +54,7 @@ Modern typography and slick interfaces styled with Tailwind CSS v4 utility class
 
 ---
 
-## 💻 Setup & Development
+##  Setup & Development
 
 ### 1. API Configuration
 Open `src/config.js` and set the endpoint corresponding to your server environment:
@@ -84,7 +84,7 @@ export const API_URL = "http://localhost:4000"; // Local backend
 
 ---
 
-## 🌐 Deployment Configuration
+##  Deployment Configuration
 
 The frontend is ready to deploy on platforms like **Vercel**. 
 The configuration file `vercel.json` ensures that all routes redirect back to `index.html` (SPA routing) so that page refreshes on subroutes do not throw `404 Not Found` errors:

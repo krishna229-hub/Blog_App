@@ -4,7 +4,7 @@ This directory contains the Node.js, Express, and MongoDB backend for the MERN B
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 BLOG-APP-BACKEND/
@@ -39,7 +39,7 @@ BLOG-APP-BACKEND/
 
 ---
 
-## 🛠️ Tech Stack & Key Libraries
+## Tech Stack & Key Libraries
 
 *   **Node.js & Express**: Core REST API framework.
 *   **Mongoose**: ODM to interface with MongoDB.
@@ -51,9 +51,9 @@ BLOG-APP-BACKEND/
 
 ---
 
-## 🔑 Core API Endpoints
+##  Core API Endpoints
 
-### 🔓 Public / Common API (`/common-api`)
+###  Public / Common API (`/common-api`)
 *   `POST /common-api/user`: Registers a new user.
 *   `POST /common-api/login`: Authenticates credentials, issues HTTP-only JWT cookie.
 *   `GET /common-api/logout`: Clears the authentication cookies.
@@ -65,19 +65,19 @@ BLOG-APP-BACKEND/
 *   `POST /user-api/comment/:articleId`: Adds a comment to an article.
 *   `PUT /user-api/like/:articleId`: Toggles like status on a post.
 
-### ✍️ Author API (`/author-api`)
+###  Author API (`/author-api`)
 *   `POST /author-api/article`: Creates a new article (draft state).
 *   `PUT /author-api/article`: Updates article details.
 *   `DELETE /author-api/article/:articleId`: Deletes/Archives a specific post.
 *   `GET /author-api/articles/:username`: Retrieves all articles authored by the user.
 
-### 👑 Admin API (`/admin-api`)
+### Admin API (`/admin-api`)
 *   `GET /admin-api/users`: Fetches list of all accounts.
 *   `PUT /admin-api/user/status`: Blocks or unblocks a specific user account.
 
 ---
 
-## 💻 Setup & Development
+##  Setup & Development
 
 ### 1. Environment Variables (`.env`)
 Create a `.env` file in the root of the backend directory:
@@ -102,7 +102,7 @@ API_SECRET=cloudinary_api_secret
 
 ---
 
-## 🌐 Deployment Details
+##  Deployment Details
 
 The backend is configured for hybrid deployment:
 1.  **Vercel Serverless Functions**: Configured in `vercel.json` to map all endpoints to `Server.js`.
